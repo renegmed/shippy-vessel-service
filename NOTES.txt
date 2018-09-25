@@ -1,0 +1,11 @@
+Need to run (if not running) first:
+
+$ docker run -d -p 5432:5432 postgres
+
+$ docker run -d -p 27017:27017 mongo
+
+
+Then 
+
+$ ./build-deploy.sh
+
