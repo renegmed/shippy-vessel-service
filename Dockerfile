@@ -15,6 +15,6 @@ RUN apk --no-cache add ca-certificates
 
 RUN mkdir /app
 WORKDIR /app
-COPY --from=builder /go/src/github.com/renegmed/shippy-vessel-service .
+COPY --from=builder /go/src/github.com/renegmed/shippy-vessel-service/shippy-vessel-service .
 
 CMD ["./shippy-vessel-service"]

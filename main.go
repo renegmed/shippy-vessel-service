@@ -6,8 +6,7 @@ import (
 
 	"os"
 
-	"github.com/micro/go-micro"
-	k8s "github.com/micro/kubernetes/go/micro"
+	micro "github.com/micro/go-micro"
 	pb "github.com/renegmed/shippy-vessel-service/proto/vessel"
 )
 
@@ -44,8 +43,16 @@ func main() {
 
 	createDummyData(repo)
 
-	srv := k8s.NewService(
-		micro.Name("shippy.vessel"),
+	// srv := k8s.NewService(
+	// 	micro.Name("go.micro.srv.vessel"),
+	// 	micro.Version("latest"),
+	// )
+
+	// Create a new service. Optionally include some options here.
+	srv := micro.NewService(
+
+		// This name must match the package name given in your protobuf definition
+		micro.Name("go.micro.srv.vessel"),
 		micro.Version("latest"),
 	)
 
